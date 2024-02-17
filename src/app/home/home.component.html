@@ -1,0 +1,158 @@
+<form [formGroup]="checkBoxHomeForm">
+
+  <div class="container" style="width: max;">
+
+  <!--First Box SEO-->
+
+  <section class="justify-content-center m-3">
+    <div class="row align-items-center shadow rounded-3">
+      <div class="col-6 m-4">
+        <h4>{{ products[0].title }}</h4>
+        <p>{{ products[0].description }}</p>
+      </div>
+      <div class="col">
+        <h2 class="fw-bold">{{ products[0].price }}
+          <i class="bi bi-currency-euro"></i>
+        </h2>
+      </div>
+      <div class="col form-check">
+        <input type="checkbox" class="form-check-input" formControlName="box1" id="box1">
+        <label for="box1" class="form-check-label">Afegir</label>
+      </div>
+    </div>
+  </section>
+
+  <!--Second Box ADS-->
+
+  <section class="justify-content-center m-3">
+    <div class="row align-items-center shadow rounded-3">
+      <div class="col-6 m-4">
+        <h4>{{ products[1].title }}</h4>
+        <p>{{ products[1].description }}</p>
+      </div>
+      <div class="col">
+        <h2 class="fw-bold">{{ products[1].price }}
+          <i class="bi bi-currency-euro"></i>
+        </h2>
+      </div>
+      <div class="col form-check">
+        <input type="checkbox" class="form-check-input" formControlName="box2" id="box2">
+        <label for="box2" class="form-check-label">Afegir</label>
+      </div>
+    </div>
+  </section>
+
+  <!--Third box WEB-->
+
+  <section class="justify-content-center m-3">
+    <div class="row align-items-center shadow rounded-3">
+      <div class="col-6 m-4">
+        <h4>{{ products[2].title }}</h4>
+        <p>{{ products[2].description }}</p>
+      </div>
+      <div class="col">
+        <h2 class="fw-bold">{{ products[2].price }}
+          <i class="bi bi-currency-euro"></i>
+        </h2>
+      </div>
+      <div class="col form-check">
+        <input type="checkbox" class="form-check-input" formControlName="box3" id="box3">
+        <label for="box3" class="form-check-label">Afegir</label>
+      </div>
+      @if (checkBoxHomeForm.get('box3')?.value) {
+        <div>
+          <app-panel (budgetOncheck)="onBudgetChange($event)"></app-panel>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!--Preu pressupost-->
+
+  <div class="container">
+    <div class="row d-flex justify-content-end">
+      <div class="col-9 text-end">
+        <p class="fw-bold fs-3"> Preu pressupostat:</p>
+      </div>
+      <div class="col-3 text-end">
+        <h3 class="fw-bold fs-2">{{ finalBudget }}
+          <i class="bi bi-currency-euro"></i>
+        </h3>
+     </div>
+    </div>
+  </div>
+
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--BOX CONTENT CHECKBOXES ANTIGUO-->
+<!-- <div class="content-container">
+  <form [formGroup]="checkBoxHomeForm">
+    <div class="row justify-content-around"> -->
+      <!--First Box-->
+      <!-- <div class="col-md-6 col-lg-7 mb-4 mx-auto" *ngFor="let product of products; let i = index" style="width: 80%;">
+        <div class="card">
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <div class="text-right">
+              <h4 class="card-title">{{ product.title }}</h4>
+              <p class="card-text">{{ product.description }}</p>
+            </div>
+            <div class="text-center">
+              <div class="price">{{ product.price }}€</div>
+            </div>
+            <div class="form-check mt-2 text-left">
+              <input class="form-check-input" type="checkbox" id="check-box{{i}}" (change)="onCheckBoxChange(i)"
+                [checked]="product.check"> -->
+              <!--Lo que había antes (click)="updateBudget(0)" quitar lo de change en adelante y poner esto-->
+<!--
+              <label class="form-check-label" for="check-box{{i}}">Afegir</label>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!--BOX CONTENT PRESUPOST-->
+      <!-- ESTRUCTURA DEL PRESUPUESTO QUE RESPONDE A LOS CHECKBOXES REVISAR NO FUNCIONA!!!! -->
+      <!-- <div class="container"> -->
+        <!--BOX TITLE-->
+        <!-- <div class="row d-flex justify-content-end">
+          <div class="col-md-12 text-end">
+
+            <div class="pressupost-container ms-auto me-0">
+              <h3 class="ms-auto">Preu pressupostat:
+
+                <label for="pressupostInput">{{budgetOncheck}} €</label>
+
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <app-panel></app-panel>
+
+    </div>
+  </form>
+
+</div> -->
